@@ -4,9 +4,41 @@ import { useNavigate } from 'react-router-dom'
         export default function Signup(props) {
 
 
+            let navigate = useNavigate();
+
+            const handleSubmit = event => {
+                event.preventDefault();
+
+                let password = event.target.password.value;
+                let confirmPassword = event.target.confirmPassword.value;
+
+                if (password !== confirmPassword){
+
+                    console.log('passwords do not match')
+                    props.flashMessage('Your passwords do not match ya dingus', 'danger')
+                } else {
+                    console.log('Potatos')
+                    let myHeaders = new Headers();
+                    myHeaders.append('Content-Type', 'application/json');
+
+                    let formData = JSONstringify({username: event.target.username.value,
+                    email: event.target.email.value,
+                    password: password
+                    })
 
 
 
+
+
+                }
+
+
+
+
+
+            }
+
+            
 
             
 
