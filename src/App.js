@@ -5,12 +5,12 @@ import Signup from './components/Signup'
 import { Routes, Route } from 'react-router-dom';
 
 
-      function App(props) {
+      function App() {
 
 
         return (
           <>
-              <Navbar name="Peanut"/>
+              <Navbar/>
               <div className='container'>
 
                       <Routes>
