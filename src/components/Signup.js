@@ -26,7 +26,7 @@ import { useNavigate } from 'react-router-dom'
                     password: password
                     })
 
-                    fetch('',{
+                    fetch('https://kekambas-blog.herokuapp.com/auth/users',{
                         method: 'POST',
                         headers: myHeaders,
                         body: formData
