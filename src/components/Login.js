@@ -13,9 +13,10 @@ export default function Login(props) {
         let password = event.target.password.value;
 
         let myHeaders = new Headers();
-        myHeaders.append('Authorization', 'Basic' + btoa(`${username}:${password}`))
+        myHeaders.append('Authorization', 'Basic ' + btoa(`${username}:${password}`))
 
-        let response = await fetch('https://kekambas-blog.herokuapp.com/auth/token', {headers:myHeaders});
+        let response = await fetch('https://kekambas-blog.herokuapp.com/auth/token', { method: 'POST',
+            headers:myHeaders});
 
         if (response.ok){
 

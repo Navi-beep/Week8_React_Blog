@@ -37,6 +37,7 @@ import Login from './components/Login'
               <Navbar name="Dingus" logout={logout}/>
               <div className='container'>
                 {message ? <Alert message={message} category={category} flashMessage={flashMessage} /> :null}
+                {loggedIn ? <h2> You are logged in!! </h2> : <h2>You are logged out!</h2>}
 
                       <Routes>
 
