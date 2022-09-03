@@ -21,28 +21,31 @@ import { useNavigate } from 'react-router-dom'
                     let myHeaders = new Headers();
                     myHeaders.append('Content-Type', 'application/json');
 
-                    let formData = JSONstringify({username: event.target.username.value,
+                    let formData = JSON.stringify({username: event.target.username.value,
                     email: event.target.email.value,
                     password: password
                     })
 
+                    fetch('',{
+                        method: 'POST',
+                        headers: myHeaders,
+                        body: formData
+                    })
 
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.error){
 
+                        } else {
+                            props.flashMessage('You have successfully created a new account!')
+                            navigate('/')
+                        }
+                    })
 
 
                 }
 
-
-
-
-
             }
-
-            
-
-            
-
-
 
 
             return (
