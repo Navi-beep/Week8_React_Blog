@@ -1,11 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+
 import Navbar from './components/Navbar'
 import Signup from './components/Signup'
 import { Routes, Route } from 'react-router-dom';
+import { useState } from 'react'
+import Alert from './components/Alert'
+
 
 
       function App() {
+
+        const now = new Date();
+        const [message, setMessage] = useState(null);
+        const [category, setCategory] = useState(null);
+
+
+        const flashMessage = (message, category) => {
+          setMessage(message)
+          setCategory(category)
+        }
 
 
         return (
@@ -15,7 +27,7 @@ import { Routes, Route } from 'react-router-dom';
 
                       <Routes>
 
-                      <Route path='/signup' element={<Signup/>} />
+                      <Route path='/signup' element={<Signup flashMessage={flashMessage}/>} />
 
 
                         

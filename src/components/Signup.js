@@ -35,7 +35,7 @@ import { useNavigate } from 'react-router-dom'
                     .then(res => res.json())
                     .then(data => {
                         if (data.error){
-
+                            console.error(data.error)
                         } else {
                             props.flashMessage('You have successfully created a new account!')
                             navigate('/')
@@ -52,7 +52,7 @@ import { useNavigate } from 'react-router-dom'
 
                 <>
                     <h4 className="text-center"> Sign Up Here!!</h4>
-                    <form>
+                    <form id="Form" onSubmit={handleSubmit}>
                         <div className="form-group">
                         <label htmlFor="email">Email</label>
                         <input type='text' className='form-control' placeholder='Enter Email' name ='email' />
@@ -61,10 +61,10 @@ import { useNavigate } from 'react-router-dom'
                         <input type='text' className='form-control' placeholder='Enter Username' name ='username' />
 
                         <label htmlFor="password">Password</label>
-                        <input type='text' className='form-control' placeholder='Enter Password' name ='password' />
+                        <input type='password' className='form-control' placeholder='Enter Password' name ='password' />
 
                         <label htmlFor="confirmPassword">Confirm Password</label>
-                        <input type='text' className='form-control' placeholder=' Please Re-enter Password' name ='confirmPassword' />
+                        <input type='password' className='form-control' placeholder=' Please Re-enter Password' name ='confirmPassword' />
 
                         <input type='submit' className='btn btn-dark w-75 mt-3' value='Sign Up' />
                         
