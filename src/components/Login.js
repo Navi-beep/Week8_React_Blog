@@ -15,7 +15,7 @@ export default function Login(props) {
         let myHeaders = new Headers();
         myHeaders.append('Authorization', 'Basic' + btoa(`${username}:${password}`))
 
-        let response = await fetch('https://kekambas-blog.herokuapp.com/auth/me', {headers:myHeaders});
+        let response = await fetch('https://kekambas-blog.herokuapp.com/auth/token', {headers:myHeaders});
 
         if (response.ok){
 
