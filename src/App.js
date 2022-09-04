@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react'
 import Alert from './components/Alert'
 import Login from './components/Login'
+import Createpost from './components/Createpost'
 
 
 
@@ -34,7 +35,7 @@ import Login from './components/Login'
 
         return (
           <>
-              <Navbar name="Dingus" logout={logout}/>
+              <Navbar name="Dingus" loggedIn={loggedIn} logout={logout}/>
               <div className='container'>
                 {message ? <Alert message={message} category={category} flashMessage={flashMessage} /> :null}
                 {loggedIn ? <h2> You are logged in!! </h2> : <h2>You are logged out!</h2>}
@@ -44,6 +45,9 @@ import Login from './components/Login'
                       <Route path='/signup' element={<Signup flashMessage={flashMessage}/>} />
 
                       <Route path='/login' element={<Login flashMessage={flashMessage} login={login}/>} />
+
+
+                      <Route path='/createpost' element={<Createpost flashMessage={flashMessage} loggedIn={loggedIn}/>} />
                         
                       </Routes>
                 
