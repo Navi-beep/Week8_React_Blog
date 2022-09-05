@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 
 
 export default function ViewPosts(props) {
-    
+    //this does not work!!!!
 
 
     //let navigate = useNavigate();
@@ -28,6 +28,17 @@ export default function ViewPosts(props) {
         <>
         
             <h2 className="text-center">View the posts!</h2>
+
+            <div class="card w-75">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-dark">Edit</a>
+                    <a href="#" class="btn btn-danger m-2">Delete</a>
+                    
+                </div>
+            </div>
+
             {posts.map((post, idx) => {
                 <div className="card" key={idx}>
                     <div className="card-body">
@@ -36,8 +47,11 @@ export default function ViewPosts(props) {
                         <h6 className="card-subtitle mb-2 text-muted">Date Posted:{post['author']['date_created']} </h6>
                         <p className="card-text">{post['content']}</p>
                     </div>
+
+                    
                 </div>
-            
+                
+        
             })}
         </>
 
