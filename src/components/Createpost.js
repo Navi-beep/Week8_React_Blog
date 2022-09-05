@@ -10,27 +10,27 @@ export default function CreatePost(props) {
 
     useEffect(() => {
         if (!loggedIn){
-            flashMessage('You must be logged in to create a post', 'danger');
+            flashMessage('You must be logged in order to create a post', 'danger');
             navigate('/login')
         }
     }, [loggedIn, flashMessage, navigate])
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = (event) => {
+        event.preventDefault();
         
         let myHeaders = new Headers();
         myHeaders.append('Content-Type', 'application/json');
         myHeaders.append('Authorization', `Bearer ${localStorage.getItem('token')}`)
 
-        let title = e.target.title.value;
-        let content = e.target.content.value;
+        let title = event.target.title.value;
+        let content = event.target.content.value;
         let data = JSON.stringify({title,content})
 
         fetch('https://kekambas-blog.herokuapp.com/blog/posts', {
             method: 'POST',
             headers: myHeaders,
             body: data
-        }).then(res => res.json())
+        })  .then(res => res.json())
             .then(data => {
                 if (data.error){
                     flashMessage(data.error, 'danger')
@@ -46,7 +46,7 @@ export default function CreatePost(props) {
             <h4 className='text-center'>Create a Post</h4>
             <form onSubmit={handleSubmit}>
                 <div className='row  border border-3 bg-info p-5'>
-                <div className=' form-group align-content-middle'>
+                <div className=' form-group align-content-middle text-center'>
                     <label htmlFor='title'>Title</label>
                     <input type='text' name='title' className='form-control text-center' placeholder='Enter Title' />
 

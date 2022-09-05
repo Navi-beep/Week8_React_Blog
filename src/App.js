@@ -6,6 +6,7 @@ import { useState } from 'react'
 import Alert from './components/Alert'
 import Login from './components/Login'
 import Createpost from './components/Createpost'
+import Viewposts from './components/Viewposts'
 
 
 
@@ -48,6 +49,8 @@ import Createpost from './components/Createpost'
 
 
                       <Route path='/createpost' element={<Createpost flashMessage={flashMessage} loggedIn={loggedIn}/>} />
+
+                      <Route path='/viewposts' element={<Viewposts flashMessage={flashMessage} loggedIn={loggedIn}/>} />
                         
                       </Routes>
                 

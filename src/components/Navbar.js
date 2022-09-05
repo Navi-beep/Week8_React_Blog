@@ -17,6 +17,7 @@ export default function Navbar(props){
                 <Link className="nav-link text-light"  to="/signup">Sign Up</Link>
                 <Link className="nav-link text-light" to="/login">Login</Link>
                 <Link class="nav-link text-light" to="/createpost">Create a Post</Link>
+                <Link class="nav-link text-light" to="/viewposts">View Posts</Link>
                 </div>
             </div>
             </div>
