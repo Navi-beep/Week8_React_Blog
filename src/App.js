@@ -41,7 +41,7 @@ import kitty from './kitty.jpeg'
                 {message ? <Alert message={message} category={category} flashMessage={flashMessage} /> :null}
                 {loggedIn ? <h2> You are logged in!! </h2> : <h2>You are logged out!</h2>}
 
-                      <div className="kitty">
+                      <div className="kitty text-center">
                       <img src={kitty}/>
                       </div>
 
