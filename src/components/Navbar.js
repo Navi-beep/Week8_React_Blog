@@ -20,6 +20,7 @@ export default function Navbar(props){
                 <Link class="nav-link text-light" to="/viewposts">View Posts</Link>
 
                 <Link class="nav-link text-light" to="/">Log out</Link>
+
                 </div>
             </div>
             </div>

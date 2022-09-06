@@ -43,7 +43,7 @@ import kitty from './kitty.jpeg'
                 {loggedIn ? <h2> You are logged in!! </h2> : <h2>You are logged out!</h2>}
 
                       <div className="kitty text-center">
-                      <img src={kitty}/>
+                      <img className="cat border border-dark border-2 rounded-pill" src={kitty} alt="cat"/>
                       </div>
 
                       <Routes>
@@ -56,6 +56,7 @@ import kitty from './kitty.jpeg'
                       <Route path='/createpost' element={<Createpost flashMessage={flashMessage} loggedIn={loggedIn}/>} />
 
                       <Route path='/viewposts' element={<Viewposts flashMessage={flashMessage} loggedIn={loggedIn}/>} />
+
                         
                       </Routes>
                 
