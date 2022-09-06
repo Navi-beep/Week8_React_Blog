@@ -9,6 +9,7 @@ import Createpost from './components/Createpost'
 import Viewposts from './components/Viewposts'
 import kitty from './kitty.jpeg'
 
+//logout doesn't work yet
 
       function App() {
 
@@ -66,3 +67,5 @@ import kitty from './kitty.jpeg'
       }
 
 export default App;
+
+//tuxedo cat photo - https://www.pexels.com/photo/photo-of-a-black-and-white-cat-looking-up-7725952/
