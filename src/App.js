@@ -7,7 +7,7 @@ import Alert from './components/Alert'
 import Login from './components/Login'
 import Createpost from './components/Createpost'
 import Viewposts from './components/Viewposts'
-
+import kitty from './kitty.jpeg'
 
 
       function App() {
@@ -40,6 +40,10 @@ import Viewposts from './components/Viewposts'
               <div className='container'>
                 {message ? <Alert message={message} category={category} flashMessage={flashMessage} /> :null}
                 {loggedIn ? <h2> You are logged in!! </h2> : <h2>You are logged out!</h2>}
+
+                      <div className="kitty">
+                      <img src={kitty}/>
+                      </div>
 
                       <Routes>
 
